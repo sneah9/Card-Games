@@ -17,14 +17,16 @@ def create_deck(names, suits, shuffled=False):
         random.shuffle(deck)
     return deck
 
-def deck_values():
+def deck_values(deck):
     values= []
-    for x in range(4):
-        for value in range(2,15):
+    for value in range(2,15):
+        for x in range(4):
             values.append(value)
-    key = dict(zip(cards, values))
+    key = dict(zip(deck, values))
     return key
 
-deck1= create_deck(names, suits, shuffled=False);
+deck1= create_deck(names, suits, shuffled=False)
+dict1= deck_values(deck1)
 
-print (deck1);
+print (deck1)
+print (dict1)
