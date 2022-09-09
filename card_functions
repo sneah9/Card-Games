@@ -1,0 +1,4 @@
+def deal_hand(players, cards_per_hand)
+    for i in range(0,len(deck1)-1,2):  
+        userHand.append(deck1[i])
+        cpuHand.append(deck1[i+1])

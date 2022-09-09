@@ -8,13 +8,11 @@ class cards:
         self.name = names
         self.suit = suits
 
-def create_deck(names, suits, shuffled=False):
+def create_deck(names, suits):
     deck= []
     for name in names:
         for suit in suits:  
             deck.append(name+suit)
-    if shuffled == True:
-        random.shuffle(deck)
     return deck
 
 def deck_values(deck):
@@ -25,7 +23,7 @@ def deck_values(deck):
     key = dict(zip(deck, values))
     return key
 
-deck1= create_deck(names, suits, shuffled=False)
+deck1= create_deck(names, suits)
 dict1= deck_values(deck1)
 
 print (deck1)
