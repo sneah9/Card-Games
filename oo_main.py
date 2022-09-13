@@ -1,5 +1,5 @@
-import random, sys
-from Deck import *
+import random
+from deck import *
 
 print("WAR: There is only so much within your control!")
 user = input("Welcome warrior, enter your name to begin:")
@@ -7,10 +7,12 @@ user = input("Welcome warrior, enter your name to begin:")
 # What are user_hand and user_play?
 # Some comments might help make this more clear for both of us.
 
-user_hand= []
-user_play= []
-cpu_hand= []
-cpu_play= []
+user_hand= Hand()
+user_play= Hand()
+cpu_hand= Hand()
+cpu_play= Hand()
+deck1= Deck.create_deck(names, suits)
+dict1= Deck.deck_values(deck1)
 
 print("Your cards are being shuffled and dealt")
 random.shuffle(deck1)
@@ -18,8 +20,9 @@ random.shuffle(deck1)
 # Deal cards to user and computer
 
 for i in range(0,len(deck1)-1,2):  
-  user_hand.append(deck1[i])
-  cpu_hand.append(deck1[i+1])
+  user_hand.cards.append(deck1[i])
+  cpu_hand.cards.append(deck1[i+1])
+
 
   print('USER HAND SO FAR:', user_hand)
   print('CPU HAND SO FAR:', cpu_hand)
